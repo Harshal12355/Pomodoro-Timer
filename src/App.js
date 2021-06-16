@@ -64,13 +64,13 @@ function App() {
       <div>
         <div  style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <AppDrawer />
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "start", marginLeft: "20px" }}>
-            <IconButton onClick={() => { setOpenClose(true); }}>
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "start", marginLeft: "calc(10% - 40px)" }}>
+            <IconButton style = {{ marginLeft: "-30px", marginRight: "30px"}} onClick={() => { setOpenClose(true); }}>
               <MenuRoundedIcon />
             </IconButton>
             <h1>Pomodoro Timer</h1>
           </div>
-          <div style = {{ marginRight: "69px"}}>
+          <div style = {{ marginRight: "calc(10%)"}}>
             <IconButton onClick={() => {setDarkMode(!darkMode); }}>
               {darkMode === false ? <WbSunnyRoundedIcon /> : <NightsStayIcon />}
             </IconButton>
