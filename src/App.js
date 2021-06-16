@@ -65,7 +65,7 @@ function App() {
         <div  style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <AppDrawer />
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "start", marginLeft: "calc(10% - 40px)" }}>
-            <IconButton style = {{ marginLeft: "-30px", marginRight: "30px"}} onClick={() => { setOpenClose(true); }}>
+            <IconButton style = {{ marginLeft: "-2vw", marginRight: "2vw"}} onClick={() => { setOpenClose(true); }}>
               <MenuRoundedIcon />
             </IconButton>
             <h1>Pomodoro Timer</h1>
