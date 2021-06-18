@@ -120,6 +120,7 @@ function App() {
         <center>
           <Divider style={{ width: "80vw" }} />
         </center>
+        Div
       </div>
     );
   }
