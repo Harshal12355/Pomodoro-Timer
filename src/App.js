@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -48,7 +49,7 @@ function App() {
           type: darkMode ? 'dark' : 'light',
           primary: {
             // light: will be calculated from palette.primary.main,
-            main: '#ff4400',
+            main: '#000000',
             // dark: will be calculated from palette.primary.main,
             // contrastText: will be calculated to contrast with palette.primary.main
           },
@@ -95,6 +96,7 @@ function App() {
       <div>
         <Header />
       </div>
+      <Timer />
     </ThemeProvider>
     
   );
@@ -120,8 +122,41 @@ function App() {
         <center>
           <Divider style={{ width: "80vw" }} />
         </center>
-        Div
       </div>
+    );
+  }
+
+
+  const [pause, setPause] = useState(true);
+  const [seconds, setSeconds] = useState(10000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!pause) { 
+        if (seconds > 0) {
+          setSeconds(seconds - 1); //keeps reducing the number of seconds by 1 
+        }
+      }
+    }, 1000); //
+    return () => clearInterval(interval);
+  });
+
+  const handlePauseToggle = () => {
+    setPause(!pause);
+  }
+
+  function Timer() {
+    return(
+      <center>
+      <br /> 
+      {/* Adds a break ^^ */}
+        <Paper style={{width: '80%', borderRadius: "20px"}}>
+          
+          <Button variant="contained" color="primary">
+            start
+          </Button>
+        </Paper>
+      </center>
     );
   }
 }
